@@ -2,10 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -28,11 +25,39 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+  .header-area{
+   background-color:#B0DAFF;
   }
-  to {
-    transform: rotate(360deg);
-  }
+/* .menubar-area{
+  background-color:#FEFF86;
+
+} */
+.footer-area{
+   background-color: #FFEAEA;
+}
+.content-area{
+  background-color: #F6F1F1;
+}
+.product-title-list {
+  max-height: 50px;
+  min-height: 50px;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-description-list {
+  max-height: 100px;
+  min-height: 100px;
+  height: 100px;
+  overflow: hidden;
+  white-space: break-spaces;
+  text-overflow: ellipsis;
+}
+
+.product-image-list {
+  max-height: 175px;
+  min-height: 150px;
 }
