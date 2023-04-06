@@ -6,27 +6,29 @@ const Cart = () => {
   const cartData = useSelector((state) => state.cart.cartList);
   return (
     <div>
-      <div className='row'>
-        <div className='col-12'>
-          <table className="table table-success table-striped">
-            {
-              cartData && cartData.map((item, index) => (
-                <tr>
-                  <td>{index + 1}&nbsp;&nbsp;</td>
-                  <td>{item.title}&nbsp;&nbsp;</td>
-                  <td>{item.price}&nbsp;&nbsp;</td>
-                  <td>Quantity-{1}-</td>
-                  <td style={{ width: '320px' }}><img src={item.image} alt="cartpic" className='img-fluid' /></td>
-
-                </tr>
-              ))
-
-            }
-              <Link to='/checkout'>     <div><button className='btn btn-primary'>Proceed to CheckOut</button></div>  </Link>
-          </table>
+    <div className='row'>
+      <div className='col-12'>
+        <table className="table table-success table-striped">
+          <tbody>
+            {cartData && cartData.map((item, index) => (
+              <tr key={item.id} style={{ backgroundColor: '#f7f7f7' }}>
+                <td>{index + 1}&nbsp;&nbsp;</td>
+                <td>{item.title}&nbsp;&nbsp;</td>
+                <td>{item.price}&nbsp;&nbsp;</td>
+                <td>Quantity-{1}-</td>
+                <td style={{ width: '320px' }}><img src={item.image} alt="cartpic" className='img-fluid' /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className='text-center'>
+          <Link to='/checkout'>
+            <button className='btn btn-primary'>Proceed to CheckOut</button>
+          </Link>
         </div>
       </div>
     </div>
+  </div>
   )
 }
 

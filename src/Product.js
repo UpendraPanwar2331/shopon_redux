@@ -81,12 +81,20 @@ const Product = () => {
             </div>
             <div className='col-6'>
               <h1>{pro.title}</h1>
+              <br></br>  <br></br>
+
               <h2>Price - {pro.price}</h2>
+              <br></br>
+
               <div>{pro.description}</div>
+              <br></br> <br></br> <br></br>
+
               <h4>Rating - {pro.rating.rate} - Liked By {pro.rating.count}</h4>
-              <button>Buy Now</button>
-              {!cartStatus && <button onClick={() => addtocartFn(pro)} >Add To Cart</button>}
-              {cartStatus && <Link  to='/cart' >  <button  >Go To Cart</button> </Link> }
+              <br></br> <br></br> <br></br> <br></br> 
+              
+            <Link  to='/checkout' > <button className='btn btn-primary'>Buy Now</button>   </Link> 
+              {!cartStatus && <button onClick={() => addtocartFn(pro)} className='btn btn-primary'  >Add To Cart</button>}
+              {cartStatus && <Link  to='/cart' >  <button  className='btn btn-warning'  >Go To Cart</button> </Link> }
             </div>
           </div>
         </> :

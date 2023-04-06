@@ -8,7 +8,7 @@ const Header = () => {
     <div>
       <div className='row header-area'>
         <div className='col-6'>
-          <h3>SHOP_ON</h3>
+      <Link  to='/'  >   <h3>SHOP_ON</h3>    </Link> 
         </div>
 
         <div className='col-5'>

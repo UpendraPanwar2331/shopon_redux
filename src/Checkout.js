@@ -12,7 +12,7 @@ const Checkout = () => {
         name: "",
         mobile: "",
         address: "",
-        
+
     }
     const [formData, setFormData] = useState(initialFormData);
 
@@ -36,20 +36,20 @@ const Checkout = () => {
     }
     return (
         <div>
-            <div className='row'>
-                <div className='col-6'>
-                    Name : <input type='text' id="name" onChange={updateData} value={formData.name} />
-
-                    mobile : <input type='number' id="mobile" onChange={updateData} value={formData.mobile} />
-
-
-                    <div className='col-6'>
-                        Address : <input type='text' id="address" onChange={updateData} value={formData.address} />
-
-                    </div>
-                </div>
-            </div>
-
+ <div className='row'>
+  <div className='col-12'>
+    <label htmlFor="name" style={{marginRight: '10px'}}>Name:</label>
+    <input type='text' id="name" style={{marginRight: '10px', padding: '5px', border: '1px solid #ccc', marginBottom: '10px'}} onChange={updateData} value={formData.name} />
+  </div>
+  <div className='col-12'>
+    <label htmlFor="mobile" style={{marginRight: '10px'}}>Mobile:</label>
+    <input type='number' id="mobile" style={{marginRight: '10px', padding: '5px', border: '1px solid #ccc', marginBottom: '10px'}} onChange={updateData} value={formData.mobile} />
+  </div>
+  <div className='col-12'>
+    <label htmlFor="address" style={{marginRight: '10px'}}>Address:</label>
+    <input type='text' id="address" style={{marginRight: '10px', padding: '5px', border: '1px solid #ccc', marginBottom: '10px'}} onChange={updateData} value={formData.address} />
+  </div>
+</div>
             <div className='row'>
                 <div className='col-4'>
                 </div>

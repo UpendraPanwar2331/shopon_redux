@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import image from '../assest/carousel2.jpg'
 
 const Menubar = () => {
   return (
     <div>
       <div className='row'>
         <div className='col-12'>
+        <img src={image} alt="img" style={{ display: "block", width: "100%" }} />
       
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
