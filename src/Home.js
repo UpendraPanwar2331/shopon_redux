@@ -24,6 +24,36 @@ const Home = () => {
     callApi();
   }, [])
   return (
+    <>
+    <div className='row'>
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100' alt='im'/><br></br>Gifts
+          </div>
+
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100' alt='im'/><br></br>Grocery
+          </div>
+
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100' alt='im'/><br></br>Mobiles
+          </div>
+
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100' alt='im' /><br></br>Electronics
+          </div>
+
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100' alt='im'/><br></br>Travel
+          </div>
+
+          <div className='col-2'  style={{fontWeight: "bold", fontSize: "20px"}}>
+            <img src='https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100' alt='im'/><br></br>Appliance
+          </div>
+    </div>
+
+
+
+
     <div className='row'>
       {
         product && product.map((item, index) => (
@@ -41,6 +71,7 @@ const Home = () => {
         ))
       }
     </div>
+    </>
   )
 }
 

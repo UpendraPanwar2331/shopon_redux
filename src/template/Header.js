@@ -7,13 +7,14 @@ const Header = () => {
   return (
     <div>
       <div className='row header-area'>
-        <div className='col-6'>
+        <div className='col-5'>
       <Link  to='/'  >   <h3>SHOP_ON</h3>    </Link> 
         </div>
 
-        <div className='col-5'>
-          <input type='text' />
-        </div>
+        <div className='col-3'>Become a Seller</div>
+
+        <div className='col-3'>More</div>
+
        
           <div className='col-1'>
           <Link to='/cart'>
