@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { setproducts } from './redux/actions/ProductAction'
 
 const Home = () => {
+  const [search,setSearch] = useState("");
   // const [product, setproduct] = useState([]);
   // dispatch data bhej raha hai redux par 
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ const Home = () => {
   useEffect(() => {
     callApi();
   }, [])
+  const filter = product.filter(val => {
+    return val.title.toLowerCase().includes(search.toLowerCase())
+  })
   return (
     <>
     <div className='row'>
@@ -53,10 +57,30 @@ const Home = () => {
 
 
 
+   
+    <div className='row'>
+        <div className='col-3'>
+          <div className='input-group'>
+            <input
+              type='text'
+              className='form-control'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder='Search Your Products'
+            />
+            <div className='input-group-append'>
+              <span className='input-group-text'>
+                <i className='fas fa-search'></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <div className='row'>
+     
       {
-        product && product.map((item, index) => (
+        product && filter.map((item, index) => (
           <div className='col-3' key={item.id}>
             <div class="card" style={{ width: "18rem" }}>
               <img src={item.image} className="card-img-top product-image-list" alt="..." />

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { MyContext } from './template/Header';
 
 import Home from './Home';
 import Notfound from './Notfound';
@@ -12,6 +13,7 @@ import Menubar from './template/Menubar';
 import Cart from './Cart';
 import Checkout from './Checkout';
 import Order from './Order';
+import { Provider } from 'react-redux';
 ;
 
 
@@ -19,6 +21,7 @@ import Order from './Order';
 function App() {
   return (
     <div className="App">
+     
       <BrowserRouter>
       <Header/>
       <Menubar/>
@@ -44,6 +47,7 @@ function App() {
       </div>
       <Footer/>
       </BrowserRouter>
+   
      
     </div>
   );
