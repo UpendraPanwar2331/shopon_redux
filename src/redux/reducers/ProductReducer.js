@@ -1,7 +1,9 @@
 import { ActionTypes } from "../constants/action_types";
 
 const initialState = {
+    //pure product bhej raha hai
     listproduct : [],
+    // only selected product bhej raha
     setselectproduct : {
         category: '',
         title: '',

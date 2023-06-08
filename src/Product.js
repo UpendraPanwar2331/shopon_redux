@@ -19,6 +19,7 @@ const Product = () => {
 
   const callApi = async (id) => {
     // setload(true);
+    //settime out use kia it give us delay and chance to update UI
     setTimeout(async () => {
       const respo = await fetch(`https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products/${id}`);
       const data = await respo.json();
@@ -56,9 +57,9 @@ const Product = () => {
 
   // checkCartStatus yeh funtion compare kr raha h ki product cart m present h ya nahi
   
-  useEffect(() => {
-    checkCartStatus();
-  })
+  // useEffect(() => {
+  //   checkCartStatus();
+  // })
 
 
 
@@ -92,7 +93,9 @@ const Product = () => {
               <h4>Rating - {pro.rating.rate} - Liked By {pro.rating.count}</h4>
               <br></br> <br></br> <br></br> <br></br> 
               
+              {/* buy now pr click krne pr checkout page par behj dega */}
             <Link  to='/checkout' > <button className='btn btn-primary'>Buy Now</button>   </Link> 
+            
               {!cartStatus && <button onClick={() => addtocartFn(pro)} className='btn btn-primary'  >Add To Cart</button>}
               {cartStatus && <Link  to='/cart' >  <button  className='btn btn-warning'  >Go To Cart</button> </Link> }
             </div>

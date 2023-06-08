@@ -1,63 +1,58 @@
-import React from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
+import './CSS/rder.css';
 
 const Order = () => {
   const orderDetails = useSelector((state) => state.order.orderDetails);
   const { name, mobile, address, products, paymentStatus, orderid } = orderDetails;
-  console.log(orderDetails);
+
+  function calculateGST(products) {
+    const totalprice = products.reduce((total, product) => total + product.price, 0);
+    const gst = (totalprice * 0.05).toFixed(2);
+    return gst;
+  }
+
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <h2>Your order is successfully placed.</h2>
-        </div>
-        <div>
-          <h3>Order Details</h3>
-          <div>Order ID - {orderid}</div>
-          <div>Name - {name}</div>
-          <div>Mobile - {mobile}</div>
-          <div>Address - {address}</div>
-          <div>Payment Status - {paymentStatus}</div>
-          <table style={{ marginTop: '20px', width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{backgroundColor: '#f1f1f1'}}>
-                <th style={{ textAlign: 'left', padding: '10px', borderBottom: '1px solid #ddd' }}>ID</th>
-                <th style={{ textAlign: 'left', padding: '10px', borderBottom: '1px solid #ddd' }}>Title</th>
-                <th style={{ textAlign: 'left', padding: '10px', borderBottom: '1px solid #ddd' }}>Price</th>
-                <th style={{ textAlign: 'left', padding: '10px', borderBottom: '1px solid #ddd' }}>Quantity</th>
-                <th style={{ textAlign: 'left', padding: '10px', width: '50px', borderBottom: '1px solid #ddd' }}>Image</th>
-              </tr>
-
-            </thead>
-            <tbody>
-              {products && products.map((item, index) => (
+      <div className='order-header'>
+        <h2>Your order is successfully placed.</h2>
+      </div>
+      <div>
+        <h3>Order Details</h3>
+        <div>Order ID - {orderid}</div>
+        <div>Name - {name}</div>
+        <div>Mobile - {mobile}</div>
+        <div>Address - {address}</div>
+        <div>Payment Status - {paymentStatus}</div>
+        <table className='order-details'>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products &&
+              products.map((item, index) => (
                 <tr key={item.id}>
-                  <td style={{ textAlign: 'left', padding: '10px' }}>{index + 1}</td>
-                  <td style={{ textAlign: 'left', padding: '10px' }}>{item.title}</td>
-                  <td style={{ textAlign: 'left', padding: '10px' }}>{item.price}</td>
-                  <td style={{ textAlign: 'left', padding: '10px' }}>1</td>
-                  <td style={{ textAlign: 'left', padding: '10px', width: '50px', height: '100px', backgroundColor: '#f1f1f1' }}>
-                    <img src={item.image} style={{ maxWidth: '100%', height: 'auto' }} alt="Product Pic" />
+                  <td>{index + 1}</td>
+                  <td>{item.title}</td>
+                  <td>{item.price}</td>
+                  <td>1</td>
+                  <td className='product-image'>
+                    <img src={item.image} alt='Product Pic' />
                   </td>
                 </tr>
               ))}
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div>
-
-
-
+      <p>GST (5%): {calculateGST(products)}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Order
-
-
-// name: "",
-// mobile: "",
-// address: "",
-// products: cartData,
-// paymentStatus: 'cod'
-// }
+export default Order;

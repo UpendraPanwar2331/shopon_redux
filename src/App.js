@@ -14,6 +14,7 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 import Order from './Order';
 import { Provider } from 'react-redux';
+import { FilterProvider } from './Context';
 ;
 
 
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
      
       <BrowserRouter>
+      <FilterProvider>
       <Header/>
       <Menubar/>
       <div className='row content-area'>
@@ -46,6 +48,7 @@ function App() {
       </div>
       </div>
       <Footer/>
+      </FilterProvider>
       </BrowserRouter>
    
      
